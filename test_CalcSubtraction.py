@@ -139,6 +139,14 @@ Validation:
 import pytest
 from calc import subtraction
 
+class Test_CalcAddition:
+
+    @pytest.mark.positive
+    def test_addition_two_positive_integers(self):
+        num1 = 5
+        num2 = 7
+        result = addition(num1, num2)
+        assert result == 12, f"Expected 12 but got {result}"
 @pytest.mark.smoke
 class Test_CalcSubtraction:
 
@@ -271,3 +279,4 @@ class Test_CalcSubtraction:
         
         # Assert
         assert result == expected_result, f"Expected {expected_result}, but got {result}"
+      
