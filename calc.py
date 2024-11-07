@@ -38,6 +38,12 @@ def division(num1, num2):
     else:
         return num1 / num2
 
+class Simp:
+    """
+    A simple calculator class that can perform addition, subtraction,
+    multiplication, and division.
+    """
+
 # Example of using the calculator function:
 result = calculator(10, 5, '*')
 print(result)  # Output should be 50
