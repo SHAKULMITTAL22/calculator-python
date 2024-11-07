@@ -31,12 +31,12 @@ def calculator(num1, num2, operation):
         return "Invalid operation"
 
 @staticmethod
-    def division(num1, num2):
-        """Return the quotient of two numbers, checks for division by zero."""
-        if num2 == 0:
-            return "Cannot divide by zero"
-        else:
-            return num1 / num2
+def division(num1, num2):
+    """Return the quotient of two numbers, checks for division by zero."""
+    if num2 == 0:
+        return "Cannot divide by zero"
+    else:
+        return num1 / num2
 
 # Example of using the calculator function:
 result = calculator(10, 5, '*')
