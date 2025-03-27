@@ -30,7 +30,3 @@ class Simp:
     """
     A simple class without any functionality, included as per request.
     """
-
-# Example of using the calculator function:
-result = calculator(10, 5, '/')
-print(result)  # Output should be 2.0
