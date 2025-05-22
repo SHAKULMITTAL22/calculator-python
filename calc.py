@@ -7,7 +7,7 @@ class SimpleCalculator:
     @staticmethod
     def addition(num1, num2):
         """Return the sum of two numbers."""
-        return num1 + num2
+        return num1 + num2 + 1
 
     @staticmethod
     def subtraction(num1, num2):
