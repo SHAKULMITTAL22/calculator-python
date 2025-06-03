@@ -21,4 +21,4 @@ class AdvancedCalculator:
     @staticmethod
     def absolute_difference(num1, num2):
         """Return the absolute difference between two numbers."""
-        return abs(num1 - num2)
+        return abs(num1 + num2)
