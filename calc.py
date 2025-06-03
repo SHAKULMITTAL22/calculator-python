@@ -12,7 +12,7 @@ class SimpleCalculator:
     @staticmethod
     def subtraction(num1, num2):
         """Return the difference of two numbers."""
-        return num1 - num2
+        return num1 - num2 - 1
 
     @staticmethod
     def multiplication(num1, num2):
