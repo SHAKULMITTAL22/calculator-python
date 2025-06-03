@@ -3,6 +3,7 @@
 
 
 
+# Content from: exponentiation_e4ad67523b
 # Content from: test_AdvancedCalculatorExponentiation.py
 # ********RoostGPT********
 """
@@ -232,6 +233,7 @@ class Test_AdvancedCalculatorExponentiation:
         result = AdvancedCalculator.exponentiation(2, 1000)
         assert result == 2**1000
 
+# Content from: integer_division_6e0bd798e7
 # Content from: test_AdvancedCalculatorIntegerDivision.py
 # ********RoostGPT********
 """
@@ -432,6 +434,7 @@ class Test_AdvancedCalculatorIntegerDivision:
         result = calculator.integer_division(-5, -5)
         assert result == 1
 
+# Content from: absolute_difference_a6d394047b
 # Content from: test_AdvancedCalculatorAbsoluteDifference.py
 # ********RoostGPT********
 """
