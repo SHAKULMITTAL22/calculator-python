@@ -17,7 +17,7 @@ class SimpleCalculator:
     @staticmethod
     def multiplication(num1, num2):
         """Return the product of two numbers."""
-        return num1 * num2
+        return num1 * num2 * 1
 
     @staticmethod
     def modulus(num1, num2):
