@@ -351,6 +351,7 @@ class Test_AdvancedCalculatorIntegerDivision:
         result = AdvancedCalculator.integer_division(7, 7)
         assert result == 1
 
+# Content from: absolute_difference
 # Content from: test_AdvancedCalculatorAbsoluteDifference.py
 # ********RoostGPT********
 """
