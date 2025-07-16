@@ -1,0 +1,84 @@
+{
+  "scenarios": [
+    {
+      "type": "functional",
+      "title": "Integration Test Execution",
+      "description": "Verify that the integration test runs successfully without errors.",
+      "testId": "TC-001",
+      "testDescription": "Execute the integration test to ensure it runs without encountering errors.",
+      "prerequisites": "Integration test script is available and configured correctly.",
+      "stepsToPerform": "1. Navigate to the integration test script.\n2. Run the integration test script.\n3. Observe the output logs.",
+      "expectedResult": "The integration test completes successfully without any errors."
+    },
+    {
+      "type": "functional",
+      "title": "Error Handling in Integration Test",
+      "description": "Verify that the integration test script handles errors gracefully.",
+      "testId": "TC-002",
+      "testDescription": "Run the integration test script and trigger an error to ensure it is caught and handled properly.",
+      "prerequisites": "Integration test script is available and configured correctly.",
+      "stepsToPerform": "1. Navigate to the integration test script.\n2. Introduce a known error in the script.\n3. Run the integration test script.\n4. Observe the error handling mechanism.",
+      "expectedResult": "The integration test script catches the error and provides a meaningful error message."
+    },
+    {
+      "type": "functional",
+      "title": "Iterable Object Handling",
+      "description": "Verify that the integration test script correctly handles iterable objects.",
+      "testId": "TC-003",
+      "testDescription": "Run the integration test script with an iterable object to ensure it is processed correctly.",
+      "prerequisites": "Integration test script is available and configured correctly.",
+      "stepsToPerform": "1. Navigate to the integration test script.\n2. Use an iterable object in the script.\n3. Run the integration test script.\n4. Observe the output.",
+      "expectedResult": "The integration test script processes the iterable object without errors."
+    },
+    {
+      "type": "non-functional",
+      "title": "Performance of Integration Test",
+      "description": "Verify the performance of the integration test script.",
+      "testId": "TC-004",
+      "testDescription": "Run the integration test script multiple times to measure its performance.",
+      "prerequisites": "Integration test script is available and configured correctly.",
+      "stepsToPerform": "1. Navigate to the integration test script.\n2. Run the integration test script 10 times.\n3. Record the execution time for each run.",
+      "expectedResult": "The integration test script completes within an acceptable time frame (e.g., less than 5 seconds per run)."
+    },
+    {
+      "type": "non-functional",
+      "title": "Resource Usage of Integration Test",
+      "description": "Verify the resource usage of the integration test script.",
+      "testId": "TC-005",
+      "testDescription": "Run the integration test script and monitor its resource usage.",
+      "prerequisites": "Integration test script is available and configured correctly.",
+      "stepsToPerform": "1. Navigate to the integration test script.\n2. Run the integration test script.\n3. Monitor CPU and memory usage during execution.",
+      "expectedResult": "The integration test script uses resources within acceptable limits (e.g., CPU usage below 80%, memory usage below 70%)."
+    },
+    {
+      "type": "functional",
+      "title": "Gherkin Syntax Validation",
+      "description": "Verify that the integration test script follows correct Gherkin syntax.",
+      "testId": "TC-006",
+      "testDescription": "Check the Gherkin syntax of the integration test script to ensure it is correct.",
+      "prerequisites": "Integration test script is available and configured correctly.",
+      "stepsToPerform": "1. Open the integration test script.\n2. Review the Gherkin syntax.\n3. Ensure all keywords (Given, When, Then) are used correctly.",
+      "expectedResult": "The Gherkin syntax is correct and follows best practices."
+    },
+    {
+      "type": "functional",
+      "title": "Error Reporting in Integration Test",
+      "description": "Verify that the integration test script provides clear error messages.",
+      "testId": "TC-007",
+      "testDescription": "Run the integration test script and trigger an error to ensure it provides a clear error message.",
+      "prerequisites": "Integration test script is available and configured correctly.",
+      "stepsToPerform": "1. Navigate to the integration test script.\n2. Introduce a known error in the script.\n3. Run the integration test script.\n4. Observe the error message.",
+      "expectedResult": "The integration test script provides a clear and informative error message."
+    },
+    {
+      "type": "non-functional",
+      "title": "Scalability of Integration Test",
+      "description": "Verify the scalability of the integration test script.",
+      "testId": "TC-008",
+      "testDescription": "Run the integration test script with varying loads to ensure it scales appropriately.",
+      "prerequisites": "Integration test script is available and configured correctly.",
+      "stepsToPerform": "1. Navigate to the integration test script.\n2. Run the integration test script with increasing loads.\n3. Monitor the performance and resource usage.",
+      "expectedResult": "The integration test script scales appropriately and maintains performance within acceptable limits."
+    }
+  ]
+}
