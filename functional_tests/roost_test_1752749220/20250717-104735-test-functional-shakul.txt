@@ -1,0 +1,64 @@
+{
+  "scenarios": [
+    {
+      "type": "functional",
+      "title": "Lorem Ipsum Text Verification",
+      "description": "Verify the presence and correctness of Lorem Ipsum text in the user story.",
+      "testId": "TC-001",
+      "testDescription": "Ensure that the Lorem Ipsum text is accurately represented and displayed as per the user story.",
+      "prerequisites": "User story must be loaded in the application.",
+      "stepsToPerform": "1. Open the user story.\n2. Scroll through the text.\n3. Verify that the Lorem Ipsum text matches the provided user story.",
+      "expectedResult": "All Lorem Ipsum text should be present and correctly formatted."
+    },
+    {
+      "type": "functional",
+      "title": "Text Formatting Verification",
+      "description": "Verify the formatting of the text in the user story.",
+      "testId": "TC-002",
+      "testDescription": "Ensure that the text formatting (e.g., headings, paragraphs, lists) is consistent and correct.",
+      "prerequisites": "User story must be loaded in the application.",
+      "stepsToPerform": "1. Open the user story.\n2. Check the formatting of headings, paragraphs, and lists.\n3. Verify that the formatting is consistent and correct.",
+      "expectedResult": "Text should be properly formatted with headings, paragraphs, and lists."
+    },
+    {
+      "type": "functional",
+      "title": "Text Content Verification",
+      "description": "Verify the content of the text in the user story.",
+      "testId": "TC-003",
+      "testDescription": "Ensure that the content of the text is accurate and complete as per the user story.",
+      "prerequisites": "User story must be loaded in the application.",
+      "stepsToPerform": "1. Open the user story.\n2. Read through the text content.\n3. Verify that the content matches the provided user story.",
+      "expectedResult": "Text content should be accurate and complete."
+    },
+    {
+      "type": "non-functional",
+      "title": "Page Load Time",
+      "description": "Verify the load time of the user story page.",
+      "testId": "TC-004",
+      "testDescription": "Ensure that the user story page loads within an acceptable time frame.",
+      "prerequisites": "User story must be accessible.",
+      "stepsToPerform": "1. Open the user story page.\n2. Record the time taken to load the page.\n3. Compare the load time with the acceptable threshold.",
+      "expectedResult": "Page should load within 2 seconds."
+    },
+    {
+      "type": "non-functional",
+      "title": "Responsiveness",
+      "description": "Verify the responsiveness of the user story page on different devices.",
+      "testId": "TC-005",
+      "testDescription": "Ensure that the user story page is responsive and displays correctly on various devices (desktop, tablet, mobile).",
+      "prerequisites": "User story must be accessible.",
+      "stepsToPerform": "1. Open the user story page on a desktop.\n2. Open the user story page on a tablet.\n3. Open the user story page on a mobile device.\n4. Verify the layout and functionality on each device.",
+      "expectedResult": "Page should be responsive and display correctly on all devices."
+    },
+    {
+      "type": "non-functional",
+      "title": "Browser Compatibility",
+      "description": "Verify the compatibility of the user story page with different browsers.",
+      "testId": "TC-006",
+      "testDescription": "Ensure that the user story page is compatible and functions correctly in various browsers (Chrome, Firefox, Safari, Edge).",
+      "prerequisites": "User story must be accessible.",
+      "stepsToPerform": "1. Open the user story page in Chrome.\n2. Open the user story page in Firefox.\n3. Open the user story page in Safari.\n4. Open the user story page in Edge.\n5. Verify the functionality and layout in each browser.",
+      "expectedResult": "Page should be compatible and function correctly in all browsers."
+    }
+  ]
+}
