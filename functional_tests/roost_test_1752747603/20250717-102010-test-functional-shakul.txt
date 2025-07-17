@@ -1,0 +1,204 @@
+{
+  "scenarios": [
+    {
+      "type": "functional",
+      "title": "User Login with Valid Credentials",
+      "description": "Verify successful login with valid ID number and OTP.",
+      "testId": "TC-001",
+      "testDescription": "A user provides a valid ID number and receives an OTP via SMS to log in.",
+      "prerequisites": "User account must exist in the database.",
+      "stepsToPerform": "1. Navigate to the login page.\n2. Enter valid ID number.\n3. Receive OTP via SMS.\n4. Enter the OTP.\n5. Click 'Login' button.",
+      "expectedResult": "User is redirected to the dashboard and a success message is shown."
+    },
+    {
+      "type": "functional",
+      "title": "User Login with Biometric Authentication",
+      "description": "Verify successful login using biometric authentication.",
+      "testId": "TC-002",
+      "testDescription": "A user logs in using biometric authentication (fingerprint or FaceID).",
+      "prerequisites": "User account must exist in the database and biometric authentication must be set up.",
+      "stepsToPerform": "1. Navigate to the login page.\n2. Select biometric authentication option.\n3. Authenticate using fingerprint or FaceID.",
+      "expectedResult": "User is redirected to the dashboard and a success message is shown."
+    },
+    {
+      "type": "functional",
+      "title": "Account Lockout After Three Failed Attempts",
+      "description": "Verify that the account is locked after three failed login attempts.",
+      "testId": "TC-003",
+      "testDescription": "A user enters incorrect credentials three times in a row.",
+      "prerequisites": "User account must exist in the database.",
+      "stepsToPerform": "1. Navigate to the login page.\n2. Enter invalid ID number and OTP.\n3. Repeat step 2 two more times.",
+      "expectedResult": "Account is locked and user is prompted to reset password or contact support."
+    },
+    {
+      "type": "functional",
+      "title": "View Account Details",
+      "description": "Verify that account details are displayed correctly.",
+      "testId": "TC-004",
+      "testDescription": "A user views their account balance, transaction history, and account details.",
+      "prerequisites": "User must be logged in.",
+      "stepsToPerform": "1. Navigate to the account details page.\n2. Verify the displayed balance.\n3. Verify the transaction history for the last 90 days.\n4. Verify account number and branch identifier.",
+      "expectedResult": "All account details are displayed correctly."
+    },
+    {
+      "type": "functional",
+      "title": "Filter Transaction History",
+      "description": "Verify that transaction history can be filtered by date and type.",
+      "testId": "TC-005",
+      "testDescription": "A user filters the transaction history by date and transaction type.",
+      "prerequisites": "User must be logged in and have transaction history.",
+      "stepsToPerform": "1. Navigate to the transaction history page.\n2. Select a date range.\n3. Select a transaction type (transfer, charge, credit).\n4. Verify the filtered transaction history.",
+      "expectedResult": "Transaction history is filtered correctly based on the selected criteria."
+    },
+    {
+      "type": "functional",
+      "title": "Internal Account Transfer",
+      "description": "Verify successful transfer to an internal account.",
+      "testId": "TC-006",
+      "testDescription": "A user transfers funds to another account within the same bank.",
+      "prerequisites": "User must be logged in and have sufficient balance.",
+      "stepsToPerform": "1. Navigate to the transfer page.\n2. Select internal account transfer.\n3. Enter the recipient's account number.\n4. Enter the transfer amount.\n5. Confirm the transfer.",
+      "expectedResult": "Funds are transferred successfully and a confirmation message is shown."
+    },
+    {
+      "type": "functional",
+      "title": "External Account Transfer",
+      "description": "Verify successful transfer to an external account.",
+      "testId": "TC-007",
+      "testDescription": "A user transfers funds to an account in another bank.",
+      "prerequisites": "User must be logged in and have sufficient balance.",
+      "stepsToPerform": "1. Navigate to the transfer page.\n2. Select external account transfer.\n3. Enter the recipient's account number and bank details.\n4. Enter the transfer amount.\n5. Confirm the transfer.",
+      "expectedResult": "Funds are transferred successfully and a confirmation message is shown."
+    },
+    {
+      "type": "functional",
+      "title": "Scheduled Transfer",
+      "description": "Verify successful scheduling of a future transfer.",
+      "testId": "TC-008",
+      "testDescription": "A user schedules a transfer to be made at a future date.",
+      "prerequisites": "User must be logged in and have sufficient balance.",
+      "stepsToPerform": "1. Navigate to the transfer page.\n2. Enter the recipient's account number.\n3. Enter the transfer amount.\n4. Select a future date for the transfer.\n5. Confirm the scheduled transfer.",
+      "expectedResult": "Transfer is scheduled successfully and a confirmation message is shown."
+    },
+    {
+      "type": "functional",
+      "title": "View Credit Card Details",
+      "description": "Verify that credit card details are displayed correctly.",
+      "testId": "TC-009",
+      "testDescription": "A user views their credit card balance, upcoming charges, and card details.",
+      "prerequisites": "User must be logged in and have a credit card.",
+      "stepsToPerform": "1. Navigate to the credit card details page.\n2. Verify the available credit balance.\n3. Verify the upcoming charges.\n4. Verify the card number and expiration date.",
+      "expectedResult": "All credit card details are displayed correctly."
+    },
+    {
+      "type": "functional",
+      "title": "Temporarily Block Credit Card",
+      "description": "Verify that a credit card can be temporarily blocked.",
+      "testId": "TC-010",
+      "testDescription": "A user temporarily blocks their credit card.",
+      "prerequisites": "User must be logged in and have a credit card.",
+      "stepsToPerform": "1. Navigate to the credit card management page.\n2. Select the option to temporarily block the card.\n3. Confirm the action.",
+      "expectedResult": "Credit card is temporarily blocked and a confirmation message is shown."
+    },
+    {
+      "type": "functional",
+      "title": "Request New Credit Card",
+      "description": "Verify that a new credit card can be requested.",
+      "testId": "TC-011",
+      "testDescription": "A user requests a new credit card.",
+      "prerequisites": "User must be logged in.",
+      "stepsToPerform": "1. Navigate to the credit card management page.\n2. Select the option to request a new card.\n3. Confirm the action.",
+      "expectedResult": "New credit card request is submitted and a confirmation message is shown."
+    },
+    {
+      "type": "functional",
+      "title": "Loan Simulation",
+      "description": "Verify that loan simulation is accurate.",
+      "testId": "TC-012",
+      "testDescription": "A user simulates a loan to see the monthly repayment amount.",
+      "prerequisites": "User must be logged in.",
+      "stepsToPerform": "1. Navigate to the loan simulation page.\n2. Enter the loan amount.\n3. Select the loan term.\n4. Verify the monthly repayment amount.",
+      "expectedResult": "Monthly repayment amount is calculated correctly."
+    },
+    {
+      "type": "functional",
+      "title": "Submit Loan Request",
+      "description": "Verify that a loan request can be submitted.",
+      "testId": "TC-013",
+      "testDescription": "A user submits a loan request for approval.",
+      "prerequisites": "User must be logged in.",
+      "stepsToPerform": "1. Navigate to the loan request page.\n2. Enter the loan amount.\n3. Select the loan term.\n4. Submit the loan request.",
+      "expectedResult": "Loan request is submitted and a confirmation message is shown."
+    },
+    {
+      "type": "functional",
+      "title": "View Loan Status",
+      "description": "Verify that loan status is displayed correctly.",
+      "testId": "TC-014",
+      "testDescription": "A user views the status of their active loans and loan requests.",
+      "prerequisites": "User must be logged in and have active loans or loan requests.",
+      "stepsToPerform": "1. Navigate to the loan status page.\n2. Verify the status of active loans and loan requests.",
+      "expectedResult": "Loan status is displayed correctly."
+    },
+    {
+      "type": "functional",
+      "title": "Open Customer Support Ticket",
+      "description": "Verify that a customer support ticket can be opened.",
+      "testId": "TC-015",
+      "testDescription": "A user opens a support ticket to contact a representative.",
+      "prerequisites": "User must be logged in.",
+      "stepsToPerform": "1. Navigate to the customer support page.\n2. Select the option to open a new ticket.\n3. Enter the ticket details.\n4. Submit the ticket.",
+      "expectedResult": "Support ticket is opened and a confirmation message is shown."
+    },
+    {
+      "type": "functional",
+      "title": "View Support Ticket History",
+      "description": "Verify that support ticket history is displayed correctly.",
+      "testId": "TC-016",
+      "testDescription": "A user views their support ticket history.",
+      "prerequisites": "User must be logged in and have previous support tickets.",
+      "stepsToPerform": "1. Navigate to the customer support page.\n2. View the support ticket history.",
+      "expectedResult": "Support ticket history is displayed correctly."
+    },
+    {
+      "type": "functional",
+      "title": "Contact Support via Phone or Chat",
+      "description": "Verify that a user can contact support via phone or chat.",
+      "testId": "TC-017",
+      "testDescription": "A user initiates a phone or chat session with support.",
+      "prerequisites": "User must be logged in.",
+      "stepsToPerform": "1. Navigate to the customer support page.\n2. Select the option to contact support via phone or chat.\n3. Initiate the session.",
+      "expectedResult": "Phone or chat session with support is initiated successfully."
+    },
+    {
+      "type": "non-functional",
+      "title": "System Availability",
+      "description": "Verify that the system is available at least 99.5% of the time.",
+      "testId": "TC-018",
+      "testDescription": "Measure the system's uptime over a specified period.",
+      "prerequisites": "Access to system monitoring tools.",
+      "stepsToPerform": "1. Use system monitoring tools to track uptime.\n2. Calculate the percentage of time the system is available.",
+      "expectedResult": "System availability is at least 99.5%."
+    },
+    {
+      "type": "non-functional",
+      "title": "Response Time",
+      "description": "Verify that the system responds to user actions within 2 seconds.",
+      "testId": "TC-019",
+      "testDescription": "Measure the response time for various user actions.",
+      "prerequisites": "Access to performance testing tools.",
+      "stepsToPerform": "1. Use performance testing tools to simulate user actions.\n2. Measure the response time for each action.",
+      "expectedResult": "Response time for all actions is within 2 seconds."
+    },
+    {
+      "type": "non-functional",
+      "title": "Language Support",
+      "description": "Verify that the application supports Hebrew and English.",
+      "testId": "TC-020",
+      "testDescription": "Check the language support for the application.",
+      "prerequisites": "Application installed on a device.",
+      "stepsToPerform": "1. Change the language settings to Hebrew.\n2. Verify that all text is displayed in Hebrew.\n3. Change the language settings to English.\n4. Verify that all text is displayed in English.",
+      "expectedResult": "Application supports both Hebrew and English."
+    }
+  ]
+}
