@@ -1,0 +1,111 @@
+# Code for testing the `calc.division` function
+
+import pytest
+
+# Import the `division` function from the `calc.division` module.
+# Correct the import statement to ensure compatibility with the directory structure and Python naming practices.
+try:
+    from calc.division import division
+except ModuleNotFoundError:
+    raise ImportError("Ensure `calc.division` module exists and is correctly imported.") 
+
+@pytest.mark.valid
+class Test_TestCalcDivisionTestDivisionByOne:
+    
+    @pytest.mark.smoke
+    @pytest.mark.positive
+    def test_division_by_one_positive_integer(self):
+        # Arrange
+        input_value = 42
+        divisor = 1
+        
+        # Act
+        result = division(input_value, divisor)
+        
+        # Assert
+        assert result == 42, f"Expected: 42, Got: {result}"
+
+    @pytest.mark.smoke
+    @pytest.mark.positive
+    def test_division_by_one_zero(self):
+        # Arrange
+        input_value = 0
+        divisor = 1
+        
+        # Act
+        result = division(input_value, divisor)
+        
+        # Assert
+        assert result == 0, f"Expected: 0, Got: {result}"
+
+    @pytest.mark.smoke
+    @pytest.mark.negative
+    def test_division_by_one_negative_integer(self):
+        # Arrange
+        input_value = -42
+        divisor = 1
+        
+        # Act
+        result = division(input_value, divisor)
+        
+        # Assert
+        assert result == -42, f"Expected: -42, Got: {result}"
+
+    @pytest.mark.performance
+    @pytest.mark.valid
+    def test_division_by_one_large_positive_number(self):
+        # Arrange
+        input_value = 1000000
+        divisor = 1
+        
+        # Act
+        result = division(input_value, divisor)
+        
+        # Assert
+        assert result == 1000000, f"Expected: 1000000, Got: {result}"
+
+    @pytest.mark.valid
+    @pytest.mark.performance
+    def test_division_by_one_floating_point(self):
+        # Arrange
+        input_value = 42.5
+        divisor = 1
+        
+        # Act
+        result = division(input_value, divisor)
+        
+        # Assert
+        assert result == 42.5, f"Expected: 42.5, Got: {result}"
+
+    @pytest.mark.valid
+    @pytest.mark.regression
+    def test_division_by_one_negative_floating_point(self):
+        # Arrange
+        input_value = -42.5
+        divisor = 1
+        
+        # Act
+        result = division(input_value, divisor)
+        
+        # Assert
+        assert result == -42.5, f"Expected: -42.5, Got: {result}"
+
+    @pytest.mark.regression
+    @pytest.mark.valid
+    def test_division_not_by_one(self):
+        # Arrange
+        dividend = 10
+        divisor = 2
+        
+        # Act
+        result = division(dividend, divisor)
+        
+        # Assert
+        assert result == 5, f"Expected: 5, Got: {result}"
+
+# Notes:
+# 1. Corrected the import statement and added a check to raise a helpful error 
+#    if the `calc.division` module cannot be found.
+# 2. Ensured all test cases test the intended scenarios of the `division` function.
+# 3. Added appropriate category markers (`@pytest.mark`) for categorization of tests by functionality.
+# 4. Removed redundancies and ensured pristine logical structure, adhering to Python best practices.
