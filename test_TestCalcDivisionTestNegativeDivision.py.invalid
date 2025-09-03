@@ -1,0 +1,139 @@
+# File: calculator-python/test_division_tests.py
+
+import pytest
+
+# Assume the division function exists in `calc/division.py`, we fix the import path issue.
+# Corrected import statement
+from calculator_python.calc.division import division
+
+class TestDivision:
+    @pytest.mark.regression
+    def test_division_negative_numbers(self):
+        # Arrange
+        numerator = -18
+        denominator = -2
+        expected_result = 9
+        
+        # Act
+        result = division(numerator, denominator)
+        
+        # Assert
+        assert result == expected_result
+
+    @pytest.mark.regression
+    def test_division_negative_by_positive(self):
+        # Arrange
+        numerator = -18
+        denominator = 2
+        expected_result = -9
+        
+        # Act
+        result = division(numerator, denominator)
+        
+        # Assert
+        assert result == expected_result
+
+    @pytest.mark.regression
+    def test_division_positive_by_negative(self):
+        # Arrange
+        numerator = 18
+        denominator = -2
+        expected_result = -9
+        
+        # Act
+        result = division(numerator, denominator)
+        
+        # Assert
+        assert result == expected_result
+
+    @pytest.mark.validation
+    def test_division_zero_by_negative(self):
+        # Arrange
+        numerator = 0
+        denominator = -5
+        expected_result = 0
+        
+        # Act
+        result = division(numerator, denominator)
+        
+        # Assert
+        assert result == expected_result
+
+    @pytest.mark.security
+    def test_division_by_zero(self):
+        # Arrange
+        numerator = 8
+        denominator = 0
+        expected_result = "Cannot divide by zero"
+        
+        # Act
+        result = division(numerator, denominator)
+        
+        # Assert
+        assert result == expected_result
+
+    @pytest.mark.performance
+    def test_large_negative_division(self):
+        # Arrange
+        numerator = -1000000
+        denominator = -2
+        expected_result = 500000
+        
+        # Act
+        result = division(numerator, denominator)
+        
+        # Assert
+        assert result == expected_result
+
+    @pytest.mark.valid
+    def test_fractional_negative_division(self):
+        # Arrange
+        numerator = -18.5
+        denominator = -2.5
+        expected_result = 7.4
+        
+        # Act
+        result = division(numerator, denominator)
+        
+        # Assert
+        assert result == pytest.approx(expected_result)
+
+    @pytest.mark.negative
+    def test_fractional_positive_result(self):
+        # Arrange
+        numerator = -7
+        denominator = -3
+        expected_result = 2.3333333333333335
+        
+        # Act
+        result = division(numerator, denominator)
+        
+        # Assert
+        assert result == pytest.approx(expected_result)
+
+    @pytest.mark.validation
+    def test_division_with_zero_inputs(self):
+        test_cases = [
+            (0, -5, 0),
+            (0, 5, 0),
+        ]
+        
+        for numerator, denominator, expected_result in test_cases:
+            # Act
+            result = division(numerator, denominator)
+            
+            # Assert
+            assert result == expected_result
+
+    @pytest.mark.regression
+    def test_small_negative_division(self):
+        # Arrange
+        numerator = -0.000018
+        denominator = -0.000002
+        expected_result = 9
+        
+        # Act
+        result = division(numerator, denominator)
+        
+        # Assert
+        assert result == pytest.approx(expected_result)
