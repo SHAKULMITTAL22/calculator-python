@@ -1,0 +1,74 @@
+{
+  "scenarios": [
+    {
+      "type": "functional",
+      "title": "Integration Test Execution",
+      "description": "Verify that the integration test runs successfully without errors.",
+      "testId": "TC-001",
+      "testDescription": "Execute the integration test to ensure it runs without encountering errors.",
+      "prerequisites": "Integration test script must be available and configured correctly.",
+      "stepsToPerform": "1. Navigate to the integration test script.\n2. Execute the integration test script.\n3. Monitor the execution logs for any errors.",
+      "expectedResult": "The integration test completes successfully with no errors in the logs."
+    },
+    {
+      "type": "functional",
+      "title": "Error Handling in Integration Test",
+      "description": "Verify that the integration test script handles errors gracefully.",
+      "testId": "TC-002",
+      "testDescription": "Execute the integration test with a known error to ensure it is caught and handled appropriately.",
+      "prerequisites": "Integration test script must be available and configured correctly.",
+      "stepsToPerform": "1. Introduce a known error in the integration test script.\n2. Execute the integration test script.\n3. Monitor the execution logs for error handling messages.",
+      "expectedResult": "The integration test script catches the error and provides a clear error message in the logs."
+    },
+    {
+      "type": "functional",
+      "title": "Gherkin Parsing",
+      "description": "Verify that the integration test script correctly parses Gherkin scenarios.",
+      "testId": "TC-003",
+      "testDescription": "Execute the integration test script with a valid Gherkin file to ensure it is parsed correctly.",
+      "prerequisites": "Integration test script must be available and configured correctly. A valid Gherkin file must be available.",
+      "stepsToPerform": "1. Prepare a valid Gherkin file.\n2. Execute the integration test script with the Gherkin file.\n3. Monitor the execution logs for parsing success messages.",
+      "expectedResult": "The integration test script successfully parses the Gherkin file with no errors in the logs."
+    },
+    {
+      "type": "functional",
+      "title": "Iterable Object Handling",
+      "description": "Verify that the integration test script correctly handles iterable objects.",
+      "testId": "TC-004",
+      "testDescription": "Execute the integration test script with an iterable object to ensure it is handled correctly.",
+      "prerequisites": "Integration test script must be available and configured correctly.",
+      "stepsToPerform": "1. Introduce an iterable object in the integration test script.\n2. Execute the integration test script.\n3. Monitor the execution logs for handling success messages.",
+      "expectedResult": "The integration test script successfully handles the iterable object with no errors in the logs."
+    },
+    {
+      "type": "non-functional",
+      "title": "Performance Under Load",
+      "description": "Verify that the integration test script performs well under load.",
+      "testId": "TC-005",
+      "testDescription": "Execute the integration test script under heavy load to ensure it performs efficiently.",
+      "prerequisites": "Integration test script must be available and configured correctly. Load testing tools must be set up.",
+      "stepsToPerform": "1. Configure the load testing tool to simulate heavy load.\n2. Execute the integration test script under the simulated load.\n3. Monitor the performance metrics.",
+      "expectedResult": "The integration test script completes successfully within acceptable performance thresholds."
+    },
+    {
+      "type": "non-functional",
+      "title": "Error Recovery Time",
+      "description": "Verify that the integration test script recovers from errors quickly.",
+      "testId": "TC-006",
+      "testDescription": "Introduce an error in the integration test script and measure the time taken to recover.",
+      "prerequisites": "Integration test script must be available and configured correctly.",
+      "stepsToPerform": "1. Introduce a known error in the integration test script.\n2. Execute the integration test script.\n3. Monitor the time taken to recover from the error.",
+      "expectedResult": "The integration test script recovers from the error within an acceptable time frame."
+    },
+    {
+      "type": "non-functional",
+      "title": "Resource Utilization",
+      "description": "Verify that the integration test script efficiently utilizes system resources.",
+      "testId": "TC-007",
+      "testDescription": "Execute the integration test script and monitor its resource utilization.",
+      "prerequisites": "Integration test script must be available and configured correctly. Resource monitoring tools must be set up.",
+      "stepsToPerform": "1. Execute the integration test script.\n2. Monitor the resource utilization (CPU, memory, etc.) during execution.\n3. Compare the utilization metrics with predefined thresholds.",
+      "expectedResult": "The integration test script utilizes system resources within acceptable limits."
+    }
+  ]
+}
