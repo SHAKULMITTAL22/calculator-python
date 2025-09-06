@@ -1,0 +1,64 @@
+{
+  "scenarios": [
+    {
+      "type": "functional",
+      "title": "Successful Integration Test Execution",
+      "description": "Verify that the integration test runs successfully without errors.",
+      "testId": "TC-001",
+      "testDescription": "A user runs an integration test and expects it to execute without any errors.",
+      "prerequisites": "Integration test scenarios must be properly defined in the Gherkin format.",
+      "stepsToPerform": "1. Navigate to the integration test execution page.\n2. Select the integration test to run.\n3. Click the 'Run' button.\n4. Observe the test execution logs.",
+      "expectedResult": "The integration test completes successfully with no errors, and the logs indicate successful execution."
+    },
+    {
+      "type": "functional",
+      "title": "Error Handling in Integration Test",
+      "description": "Verify that the integration test provides meaningful error messages when an error occurs.",
+      "testId": "TC-002",
+      "testDescription": "A user runs an integration test that encounters an error and expects a clear error message.",
+      "prerequisites": "Integration test scenarios must include scenarios that intentionally cause errors.",
+      "stepsToPerform": "1. Navigate to the integration test execution page.\n2. Select an integration test that is known to cause an error.\n3. Click the 'Run' button.\n4. Observe the test execution logs.",
+      "expectedResult": "The integration test fails and provides a clear error message indicating the nature of the failure."
+    },
+    {
+      "type": "functional",
+      "title": "Iterable Object Handling",
+      "description": "Verify that the integration test handles iterable objects correctly.",
+      "testId": "TC-003",
+      "testDescription": "A user runs an integration test that involves iterable objects and expects it to handle them correctly.",
+      "prerequisites": "Integration test scenarios must include scenarios that involve iterable objects.",
+      "stepsToPerform": "1. Navigate to the integration test execution page.\n2. Select an integration test that involves iterable objects.\n3. Click the 'Run' button.\n4. Observe the test execution logs.",
+      "expectedResult": "The integration test completes successfully and handles iterable objects without errors."
+    },
+    {
+      "type": "functional",
+      "title": "Non-Iterable Object Error Handling",
+      "description": "Verify that the integration test provides an error when a non-iterable object is encountered where an iterable object is expected.",
+      "testId": "TC-004",
+      "testDescription": "A user runs an integration test that encounters a non-iterable object where an iterable object is expected and expects a clear error message.",
+      "prerequisites": "Integration test scenarios must include scenarios that involve non-iterable objects where iterable objects are expected.",
+      "stepsToPerform": "1. Navigate to the integration test execution page.\n2. Select an integration test that involves a non-iterable object where an iterable object is expected.\n3. Click the 'Run' button.\n4. Observe the test execution logs.",
+      "expectedResult": "The integration test fails and provides a clear error message indicating that a non-iterable object was encountered where an iterable object was expected."
+    },
+    {
+      "type": "non-functional",
+      "title": "Integration Test Execution Time",
+      "description": "Verify that the integration test completes within an acceptable time frame.",
+      "testId": "TC-005",
+      "testDescription": "A user runs an integration test and expects it to complete within a predefined time limit.",
+      "prerequisites": "Integration test scenarios must be defined, and a time limit must be established.",
+      "stepsToPerform": "1. Navigate to the integration test execution page.\n2. Select the integration test to run.\n3. Click the 'Run' button.\n4. Measure the time taken for the test to complete.",
+      "expectedResult": "The integration test completes within the predefined time limit."
+    },
+    {
+      "type": "non-functional",
+      "title": "Resource Utilization During Integration Test",
+      "description": "Verify that the integration test does not excessively utilize system resources.",
+      "testId": "TC-006",
+      "testDescription": "A user runs an integration test and expects it to utilize system resources within acceptable limits.",
+      "prerequisites": "Integration test scenarios must be defined, and resource utilization limits must be established.",
+      "stepsToPerform": "1. Navigate to the integration test execution page.\n2. Select the integration test to run.\n3. Click the 'Run' button.\n4. Monitor system resource utilization during test execution.",
+      "expectedResult": "The integration test completes without excessively utilizing system resources."
+    }
+  ]
+}
