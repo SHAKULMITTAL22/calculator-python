@@ -1,0 +1,301 @@
+openapi: 3.0.0
+info:
+  title: אפליקציית מובייל – בנק ירושלים
+  description: אפליקציית מובייל של בנק ירושלים ללקוחות פרטיים
+  version: 1.1
+servers:
+  - url: https://api.bank-hapoalim.co.il/mobile
+    description: שרת אפליקציית המובייל של בנק ירושלים
+paths:
+  /login:
+    post:
+      summary: כניסה לאפליקציה באמצעות מספר זהות וקוד סודי
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userId:
+                  type: string
+                secretCode:
+                  type: string
+      responses:
+        '200':
+          description: כניסה מוצלחת
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "כניסה מוצלחת"
+        '401':
+          description: מספר זהות או קוד סודי שגוי
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "מספר זהות או קוד סודי שגוי"
+        '429':
+          description: נעילה אוטומטית לאחר 3 ניסיונות כושלים
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "ניסיונות כניסה כושלים, הניסיון נעול"
+
+  /biometric-login:
+    post:
+      summary: כניסה לאפליקציה באמצעות זיהוי ביומטרי
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                biometricData:
+                  type: string
+      responses:
+        '200':
+          description: כניסה מוצלחת
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "כניסה מוצלחת"
+        '401':
+          description: זיהוי ביומטרי נכשל
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "זיהוי ביומטרי נכשל"
+
+  /account-details:
+    get:
+      summary: צפייה בפרטי חשבון
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: מידע על החשבון מוצג
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  balance:
+                    type: number
+                  transactions:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        date:
+                          type: string
+                        type:
+                          type: string
+                        amount:
+                          type: number
+                  accountNumber:
+                    type: string
+                  branchId:
+                    type: string
+
+  /transfer/internal:
+    post:
+      summary: העברת כספים לחשבון פנימי
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                internalAccountNumber:
+                  type: string
+                amount:
+                  type: number
+      responses:
+        '200':
+          description: העברה מוצלחת
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "העברה מוצלחת"
+        '400':
+          description: פרטי העברה שגויים
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "פרטי העברה שגויים"
+
+  /transfer/external:
+    post:
+      summary: העברת כספים לחשבון חיצוני
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                externalAccountNumber:
+                  type: string
+                amount:
+                  type: number
+      responses:
+        '200':
+          description: העברה מוצלחת
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "העברה מוצלחת"
+        '400':
+          description: פרטי העברה שגויים
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "פרטי העברה שגויים"
+
+  /credit-cards:
+    get:
+      summary: ניהול כרטיסי אשראי
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: מידע על כרטיסי האשראי מוצג
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  availableBalance:
+                    type: number
+                  futureCharges:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        date:
+                          type: string
+                        amount:
+                          type: number
+
+  /loan-request:
+    post:
+      summary: בקשת הלוואה
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                amount:
+                  type: number
+                term:
+                  type: integer
+      responses:
+        '200':
+          description: בקשת הלוואה נשלחת
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "בקשת הלוואה נשלחת"
+        '400':
+          description: פרטי הלוואה שגויים
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "פרטי הלוואה שגויים"
+
+  /customer-service:
+    post:
+      summary: שירות לקוחות
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ticketDetails:
+                  type: string
+      responses:
+        '200':
+          description: פנייה נשלחת
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "פנייה נשלחת"
+        '400':
+          description: פרטי הפנייה שגויים
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "פרטי הפנייה שגויים"
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
