@@ -1,0 +1,16 @@
+Verify Gherkin Parsing
+Check Integration Test Execution
+Validate Error Handling
+Verify Object Iterability
+Check for Correct Object Type
+Performance of Integration Test
+Resource Utilization
+Error Logging
+Test HTTP GET method
+Test HTTP POST method
+Test HTTP PUT method
+Test HTTP DELETE method
+Test invalid input for HTTP POST method
+Test unauthorized access
+Test resource not found
+Test server error
