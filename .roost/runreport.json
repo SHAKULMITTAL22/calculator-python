@@ -1,0 +1,488 @@
+{
+  "run_id": "7dd18b11",
+  "started_at": "2026-04-27T08:03:06.996655Z",
+  "ended_at": "2026-04-27T08:04:58.623872Z",
+  "status": "ok",
+  "config": {
+    "repo": "/private/var/tmp/Roost/RoostGPT/python-test-agent/1777276966/source/calculator-python",
+    "out": "/private/var/tmp/Roost/RoostGPT/python-test-agent/1777276966/source/calculator-python",
+    "workers": 5,
+    "scenarios_from": "planner",
+    "provider": "env:AI_TYPE",
+    "model": "gemini/gemini-3-flash-preview",
+    "jedi": true
+  },
+  "summary": {
+    "targets_total": 8,
+    "targets_passed": 5,
+    "targets_failed": 0,
+    "targets_partial": 0,
+    "targets_skipped": 3,
+    "scenarios_total": 30,
+    "scenarios_passed": 30,
+    "scenarios_failed": 0,
+    "coverage_weighted": null,
+    "llm_cost_usd": 0.4173,
+    "elapsed_ms": 0
+  },
+  "targets": [
+    {
+      "target_symbol_id": "calc.SimpleCalculator.addition",
+      "symbol_kind": "staticmethod",
+      "source_file": "calc.py",
+      "source_range": [
+        8,
+        10
+      ],
+      "test_file": "/private/var/tmp/Roost/RoostGPT/python-test-agent/1777276966/source/calculator-python/module/test_SimpleCalculator_addition.py",
+      "test_file_hash": "sha256:dc312aae7cb1aeac7a950f9f0070ed59d32b7f7120a10db9fe087f08f4d1a245",
+      "test_status": "passed",
+      "iterations": 25,
+      "pivots": 1,
+      "scenarios": [
+        {
+          "scenario_id": "calc.SimpleCalculator.addition#0",
+          "scenario_name": "test_addition_positive_integers",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.SimpleCalculator.addition#1",
+          "scenario_name": "test_addition_negative_integers",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.SimpleCalculator.addition#2",
+          "scenario_name": "test_addition_mixed_signs",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.SimpleCalculator.addition#3",
+          "scenario_name": "test_addition_with_zero",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.SimpleCalculator.addition#4",
+          "scenario_name": "test_addition_floats",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.SimpleCalculator.addition#5",
+          "scenario_name": "test_addition_invalid_types",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        }
+      ],
+      "coverage_pct": null,
+      "writer_cost_usd": 0.099325,
+      "writer_input_tokens": 280112,
+      "writer_output_tokens": 12502,
+      "diagnostics": []
+    },
+    {
+      "target_symbol_id": "calc.SimpleCalculator.modulus",
+      "symbol_kind": "staticmethod",
+      "source_file": "calc.py",
+      "source_range": [
+        23,
+        27
+      ],
+      "test_file": "/private/var/tmp/Roost/RoostGPT/python-test-agent/1777276966/source/calculator-python/module/test_SimpleCalculator_modulus.py",
+      "test_file_hash": "sha256:1fd7becfa0c9a574555bc4e434dc8a94722e871ba94b90c0e35147bfe91e41ac",
+      "test_status": "passed",
+      "iterations": 29,
+      "pivots": 1,
+      "scenarios": [
+        {
+          "scenario_id": "calc.SimpleCalculator.modulus#0",
+          "scenario_name": "test_modulus_positive_integers",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.SimpleCalculator.modulus#1",
+          "scenario_name": "test_modulus_by_zero",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.SimpleCalculator.modulus#2",
+          "scenario_name": "test_modulus_negative_dividend",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.SimpleCalculator.modulus#3",
+          "scenario_name": "test_modulus_negative_divisor",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.SimpleCalculator.modulus#4",
+          "scenario_name": "test_modulus_zero_dividend",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.SimpleCalculator.modulus#5",
+          "scenario_name": "test_modulus_floats",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        }
+      ],
+      "coverage_pct": null,
+      "writer_cost_usd": 0.08553430000000001,
+      "writer_input_tokens": 275624,
+      "writer_output_tokens": 9767,
+      "diagnostics": []
+    },
+    {
+      "target_symbol_id": "calc.SimpleCalculator.multiplication",
+      "symbol_kind": "staticmethod",
+      "source_file": "calc.py",
+      "source_range": [
+        18,
+        20
+      ],
+      "test_file": "/private/var/tmp/Roost/RoostGPT/python-test-agent/1777276966/source/calculator-python/module/test_SimpleCalculator_multiplication.py",
+      "test_file_hash": "sha256:f36f7b71deb4b1da331aafce7f94caedb522a9051d71db0165cb9209e6d3c066",
+      "test_status": "passed",
+      "iterations": 29,
+      "pivots": 1,
+      "scenarios": [
+        {
+          "scenario_id": "calc.SimpleCalculator.multiplication#0",
+          "scenario_name": "positive_integers",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.SimpleCalculator.multiplication#1",
+          "scenario_name": "negative_integers",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.SimpleCalculator.multiplication#2",
+          "scenario_name": "mixed_signs",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.SimpleCalculator.multiplication#3",
+          "scenario_name": "multiplication_by_zero",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.SimpleCalculator.multiplication#4",
+          "scenario_name": "floating_point",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.SimpleCalculator.multiplication#5",
+          "scenario_name": "large_numbers",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        }
+      ],
+      "coverage_pct": null,
+      "writer_cost_usd": 0.08527449999999999,
+      "writer_input_tokens": 304691,
+      "writer_output_tokens": 8516,
+      "diagnostics": []
+    },
+    {
+      "target_symbol_id": "calc.SimpleCalculator.subtraction",
+      "symbol_kind": "staticmethod",
+      "source_file": "calc.py",
+      "source_range": [
+        13,
+        15
+      ],
+      "test_file": "/private/var/tmp/Roost/RoostGPT/python-test-agent/1777276966/source/calculator-python/module/test_SimpleCalculator_subtraction.py",
+      "test_file_hash": "sha256:869afa0684c86c47576c2cc2ec02908925bd70940024508a0e10f6a0d4838763",
+      "test_status": "passed",
+      "iterations": 22,
+      "pivots": 1,
+      "scenarios": [
+        {
+          "scenario_id": "calc.SimpleCalculator.subtraction#0",
+          "scenario_name": "test_subtraction_positive_integers",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.SimpleCalculator.subtraction#1",
+          "scenario_name": "test_subtraction_negative_integers",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.SimpleCalculator.subtraction#2",
+          "scenario_name": "test_subtraction_zeros",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.SimpleCalculator.subtraction#3",
+          "scenario_name": "test_subtraction_floats",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.SimpleCalculator.subtraction#4",
+          "scenario_name": "test_subtraction_mixed_signs",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.SimpleCalculator.subtraction#5",
+          "scenario_name": "test_subtraction_invalid_types",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        }
+      ],
+      "coverage_pct": null,
+      "writer_cost_usd": 0.07588725000000002,
+      "writer_input_tokens": 207408,
+      "writer_output_tokens": 8997,
+      "diagnostics": []
+    },
+    {
+      "target_symbol_id": "calc.division",
+      "symbol_kind": "function",
+      "source_file": "calc.py",
+      "source_range": [
+        29,
+        33
+      ],
+      "test_file": "/private/var/tmp/Roost/RoostGPT/python-test-agent/1777276966/source/calculator-python/module/test_division.py",
+      "test_file_hash": "sha256:afb8c45452a94a0591669d98cec3cd2d8bb39fb9f244963ff75159a374ab02b9",
+      "test_status": "passed",
+      "iterations": 19,
+      "pivots": 1,
+      "scenarios": [
+        {
+          "scenario_id": "calc.division#0",
+          "scenario_name": "zero_numerator",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.division#1",
+          "scenario_name": "both_zero",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.division#2",
+          "scenario_name": "type_error_num1_string",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.division#3",
+          "scenario_name": "type_error_num2_string",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.division#4",
+          "scenario_name": "infinity_numerator",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.division#5",
+          "scenario_name": "nan_numerator",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        }
+      ],
+      "coverage_pct": null,
+      "writer_cost_usd": 0.07129285000000002,
+      "writer_input_tokens": 185039,
+      "writer_output_tokens": 9133,
+      "diagnostics": []
+    },
+    {
+      "target_symbol_id": "calc_advance.AdvancedCalculator.absolute_difference",
+      "symbol_kind": "staticmethod",
+      "source_file": "calc_advance.py",
+      "source_range": null,
+      "test_file": "",
+      "test_file_hash": "",
+      "test_status": "skipped",
+      "iterations": 0,
+      "pivots": 0,
+      "scenarios": [],
+      "coverage_pct": null,
+      "writer_cost_usd": 0.0,
+      "writer_input_tokens": 0,
+      "writer_output_tokens": 0,
+      "diagnostics": [
+        {
+          "severity": "warning",
+          "code": "ABORTED",
+          "message": "skipped due to signal",
+          "symbol": "calc_advance.AdvancedCalculator.absolute_difference"
+        }
+      ]
+    },
+    {
+      "target_symbol_id": "calc_advance.AdvancedCalculator.exponentiation",
+      "symbol_kind": "staticmethod",
+      "source_file": "calc_advance.py",
+      "source_range": null,
+      "test_file": "",
+      "test_file_hash": "",
+      "test_status": "skipped",
+      "iterations": 0,
+      "pivots": 0,
+      "scenarios": [],
+      "coverage_pct": null,
+      "writer_cost_usd": 0.0,
+      "writer_input_tokens": 0,
+      "writer_output_tokens": 0,
+      "diagnostics": [
+        {
+          "severity": "warning",
+          "code": "ABORTED",
+          "message": "skipped due to signal",
+          "symbol": "calc_advance.AdvancedCalculator.exponentiation"
+        }
+      ]
+    },
+    {
+      "target_symbol_id": "calc_advance.AdvancedCalculator.integer_division",
+      "symbol_kind": "staticmethod",
+      "source_file": "calc_advance.py",
+      "source_range": null,
+      "test_file": "",
+      "test_file_hash": "",
+      "test_status": "skipped",
+      "iterations": 0,
+      "pivots": 0,
+      "scenarios": [],
+      "coverage_pct": null,
+      "writer_cost_usd": 0.0,
+      "writer_input_tokens": 0,
+      "writer_output_tokens": 0,
+      "diagnostics": [
+        {
+          "severity": "warning",
+          "code": "ABORTED",
+          "message": "skipped due to signal",
+          "symbol": "calc_advance.AdvancedCalculator.integer_division"
+        }
+      ]
+    }
+  ],
+  "files_written": [
+    {
+      "path": "module/test_SimpleCalculator_addition.py",
+      "hash": "sha256:dc312aae7cb1aeac7a950f9f0070ed59d32b7f7120a10db9fe087f08f4d1a245",
+      "status": "created"
+    },
+    {
+      "path": "module/test_SimpleCalculator_modulus.py",
+      "hash": "sha256:1fd7becfa0c9a574555bc4e434dc8a94722e871ba94b90c0e35147bfe91e41ac",
+      "status": "created"
+    },
+    {
+      "path": "module/test_SimpleCalculator_multiplication.py",
+      "hash": "sha256:f36f7b71deb4b1da331aafce7f94caedb522a9051d71db0165cb9209e6d3c066",
+      "status": "created"
+    },
+    {
+      "path": "module/test_SimpleCalculator_subtraction.py",
+      "hash": "sha256:869afa0684c86c47576c2cc2ec02908925bd70940024508a0e10f6a0d4838763",
+      "status": "created"
+    },
+    {
+      "path": "module/test_division.py",
+      "hash": "sha256:afb8c45452a94a0591669d98cec3cd2d8bb39fb9f244963ff75159a374ab02b9",
+      "status": "created"
+    }
+  ],
+  "pr_ready": {
+    "branch_suggestion": "roost/python-tests-20260427-0804",
+    "commit_message": "roost-pytest: add 5 test file(s)",
+    "pr_title": "Auto-generated Python unit tests (5 file(s))",
+    "pr_body_markdown": "## Summary\n- 5 targets with fully green tests\n\n## Generated test files\n- `module/test_SimpleCalculator_addition.py`\n- `module/test_SimpleCalculator_modulus.py`\n- `module/test_SimpleCalculator_multiplication.py`\n- `module/test_SimpleCalculator_subtraction.py`\n- `module/test_division.py`",
+    "changed_files": [
+      "module/test_SimpleCalculator_addition.py",
+      "module/test_SimpleCalculator_modulus.py",
+      "module/test_SimpleCalculator_multiplication.py",
+      "module/test_SimpleCalculator_subtraction.py",
+      "module/test_division.py"
+    ]
+  },
+  "diagnostics": []
+}
