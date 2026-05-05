@@ -1,0 +1,218 @@
+{
+  "run_id": "8ac5ba90",
+  "started_at": "2026-05-05T19:07:40.249700Z",
+  "ended_at": "2026-05-05T19:09:36.564988Z",
+  "status": "failed",
+  "config": {
+    "repo": "/var/tmp/Roost/RoostGPT/python-test-agent/2a7e7675-3ed2-46b1-8c1f-80ad834c8d1a/source/calculator-python",
+    "out": "/var/tmp/Roost/RoostGPT/python-test-agent/2a7e7675-3ed2-46b1-8c1f-80ad834c8d1a/source/calculator-python",
+    "workers": 5,
+    "scenarios_from": "planner",
+    "provider": "env:AI_TYPE",
+    "model": "gemini/gemini-3-flash-preview",
+    "jedi": true
+  },
+  "summary": {
+    "targets_total": 2,
+    "targets_passed": 0,
+    "targets_failed": 1,
+    "targets_partial": 1,
+    "targets_skipped": 0,
+    "scenarios_total": 12,
+    "scenarios_passed": 0,
+    "scenarios_failed": 12,
+    "coverage_weighted": null,
+    "llm_cost_usd": 0.2009,
+    "llm_input_tokens": 659520,
+    "llm_output_tokens": 21138,
+    "llm_cache_read_input_tokens": 427242,
+    "llm_cache_creation_input_tokens": 0,
+    "llm_api_calls": 45,
+    "elapsed_ms": 0
+  },
+  "targets": [
+    {
+      "target_symbol_id": "calc.SimpleCalculator.addition",
+      "symbol_kind": "staticmethod",
+      "source_file": "calc.py",
+      "source_range": [
+        8,
+        10
+      ],
+      "test_file": "/var/tmp/Roost/RoostGPT/python-test-agent/2a7e7675-3ed2-46b1-8c1f-80ad834c8d1a/source/calculator-python/module/test_SimpleCalculator_addition.py",
+      "test_file_hash": "sha256:304f54af1a744b14b49367ea1c14b3626c6caa0218bd89cc23cd93c88e9ae983",
+      "test_status": "failed",
+      "iterations": 24,
+      "pivots": 2,
+      "scenarios": [
+        {
+          "scenario_id": "calc.SimpleCalculator.addition#0",
+          "scenario_name": "addition_positive_integers",
+          "passed": false,
+          "duration_ms": null,
+          "failure_reason": "no pytest result",
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.SimpleCalculator.addition#1",
+          "scenario_name": "addition_negative_integers",
+          "passed": false,
+          "duration_ms": null,
+          "failure_reason": "no pytest result",
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.SimpleCalculator.addition#2",
+          "scenario_name": "addition_zeros",
+          "passed": false,
+          "duration_ms": null,
+          "failure_reason": "no pytest result",
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.SimpleCalculator.addition#3",
+          "scenario_name": "addition_mixed_signs",
+          "passed": false,
+          "duration_ms": null,
+          "failure_reason": "no pytest result",
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.SimpleCalculator.addition#4",
+          "scenario_name": "addition_floats",
+          "passed": false,
+          "duration_ms": null,
+          "failure_reason": "no pytest result",
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.SimpleCalculator.addition#5",
+          "scenario_name": "addition_large_numbers",
+          "passed": false,
+          "duration_ms": null,
+          "failure_reason": "no pytest result",
+          "stderr_excerpt": null
+        }
+      ],
+      "coverage_pct": null,
+      "writer_cost_usd": 0.11637489999999999,
+      "writer_input_tokens": 398087,
+      "writer_output_tokens": 12999,
+      "writer_cache_read_input_tokens": 270368,
+      "writer_cache_creation_input_tokens": 0,
+      "diagnostics": [
+        {
+          "severity": "error",
+          "code": "WRITER_GAVE_UP",
+          "message": "writer called finish('failed'): pytest is missing in the environment (/usr/bin/python3.12: No module named pytest). I cannot run or verify the tests. The generated test file is coherent and follows all instructions, but the environment prevents execution.; likely_cause=unknown__agent_stalled_without_running_pytest",
+          "symbol": "calc.SimpleCalculator.addition"
+        }
+      ]
+    },
+    {
+      "target_symbol_id": "calc.SimpleCalculator.multiplication",
+      "symbol_kind": "staticmethod",
+      "source_file": "calc.py",
+      "source_range": [
+        18,
+        20
+      ],
+      "test_file": "/var/tmp/Roost/RoostGPT/python-test-agent/2a7e7675-3ed2-46b1-8c1f-80ad834c8d1a/source/calculator-python/module/test_SimpleCalculator_multiplication.py",
+      "test_file_hash": "sha256:7191499a00c95621f141b2f81d8b47388b3cf6727ee8a187938e6f2a7fc1bc23",
+      "test_status": "partial",
+      "iterations": 21,
+      "pivots": 1,
+      "scenarios": [
+        {
+          "scenario_id": "calc.SimpleCalculator.multiplication#0",
+          "scenario_name": "positive_integers",
+          "passed": false,
+          "duration_ms": null,
+          "failure_reason": "no pytest result",
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.SimpleCalculator.multiplication#1",
+          "scenario_name": "negative_integers",
+          "passed": false,
+          "duration_ms": null,
+          "failure_reason": "no pytest result",
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.SimpleCalculator.multiplication#2",
+          "scenario_name": "mixed_signs",
+          "passed": false,
+          "duration_ms": null,
+          "failure_reason": "no pytest result",
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.SimpleCalculator.multiplication#3",
+          "scenario_name": "multiplication_by_zero",
+          "passed": false,
+          "duration_ms": null,
+          "failure_reason": "no pytest result",
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.SimpleCalculator.multiplication#4",
+          "scenario_name": "multiplication_by_one",
+          "passed": false,
+          "duration_ms": null,
+          "failure_reason": "no pytest result",
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.SimpleCalculator.multiplication#5",
+          "scenario_name": "floating_point_numbers",
+          "passed": false,
+          "duration_ms": null,
+          "failure_reason": "no pytest result",
+          "stderr_excerpt": null
+        }
+      ],
+      "coverage_pct": null,
+      "writer_cost_usd": 0.0845402,
+      "writer_input_tokens": 261433,
+      "writer_output_tokens": 8139,
+      "writer_cache_read_input_tokens": 156874,
+      "writer_cache_creation_input_tokens": 0,
+      "diagnostics": []
+    }
+  ],
+  "files_written": [
+    {
+      "path": "module/test_SimpleCalculator_addition.py",
+      "hash": "sha256:304f54af1a744b14b49367ea1c14b3626c6caa0218bd89cc23cd93c88e9ae983",
+      "status": "skipped_stub"
+    },
+    {
+      "path": "module/test_SimpleCalculator_multiplication.py",
+      "hash": "sha256:7191499a00c95621f141b2f81d8b47388b3cf6727ee8a187938e6f2a7fc1bc23",
+      "status": "created"
+    }
+  ],
+  "pr_ready": {
+    "branch_suggestion": "roost/python-tests-20260505-1909",
+    "commit_message": "roost-pytest: add 2 test file(s)",
+    "pr_title": "Auto-generated Python unit tests (2 file(s))",
+    "pr_body_markdown": "## Summary\n- 0 targets with fully green tests\n- 1 targets with partial coverage\n\n## Generated test files\n- `module/test_SimpleCalculator_addition.py`\n- `module/test_SimpleCalculator_multiplication.py`",
+    "changed_files": [
+      "module/test_SimpleCalculator_addition.py",
+      "module/test_SimpleCalculator_multiplication.py"
+    ]
+  },
+  "diagnostics": [
+    {
+      "severity": "warning",
+      "code": "INSTALL_FAILED",
+      "message": "venv install step 'repo deps' failed; stderr tail: m the\n    pipx package).\n\nnote: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.\nhint: See PEP 668 for the detailed specification.\n"
+    },
+    {
+      "severity": "warning",
+      "code": "INSTALL_FAILED",
+      "message": "venv install step 'roost-pytest test deps' failed; stderr tail: m the\n    pipx package).\n\nnote: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.\nhint: See PEP 668 for the detailed specification.\n"
+    }
+  ]
+}
