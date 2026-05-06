@@ -1,0 +1,192 @@
+{
+  "run_id": "328fd88e",
+  "started_at": "2026-05-06T06:11:35.796696Z",
+  "ended_at": "2026-05-06T06:12:42.957805Z",
+  "status": "ok",
+  "config": {
+    "repo": "/var/tmp/Roost/RoostGPT/python-test-agent/1368c4b9-9b36-4473-8db4-627c4467baf1/source/calculator-python",
+    "out": "/var/tmp/Roost/RoostGPT/python-test-agent/1368c4b9-9b36-4473-8db4-627c4467baf1/source/calculator-python",
+    "workers": 5,
+    "scenarios_from": "planner",
+    "provider": "env:AI_TYPE",
+    "model": "gemini/gemini-3-flash-preview",
+    "jedi": true
+  },
+  "summary": {
+    "targets_total": 2,
+    "targets_passed": 2,
+    "targets_failed": 0,
+    "targets_partial": 0,
+    "targets_skipped": 0,
+    "scenarios_total": 11,
+    "scenarios_passed": 11,
+    "scenarios_failed": 0,
+    "coverage_weighted": null,
+    "llm_cost_usd": 0.1124,
+    "llm_input_tokens": 252022,
+    "llm_output_tokens": 12077,
+    "llm_cache_read_input_tokens": 110854,
+    "llm_cache_creation_input_tokens": 0,
+    "llm_api_calls": 20,
+    "elapsed_ms": 0
+  },
+  "targets": [
+    {
+      "target_symbol_id": "calc.SimpleCalculator.addition",
+      "symbol_kind": "staticmethod",
+      "source_file": "calc.py",
+      "source_range": [
+        8,
+        10
+      ],
+      "test_file": "/var/tmp/Roost/RoostGPT/python-test-agent/1368c4b9-9b36-4473-8db4-627c4467baf1/source/calculator-python/module/test_SimpleCalculator_addition.py",
+      "test_file_hash": "sha256:5fbdeea9129c1007eb8bfa6249ce48c6984f0fe7550ddbca9ea6c4ca4cfb5287",
+      "test_status": "passed",
+      "iterations": 12,
+      "pivots": 0,
+      "scenarios": [
+        {
+          "scenario_id": "calc.SimpleCalculator.addition#0",
+          "scenario_name": "positive_integers",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.SimpleCalculator.addition#1",
+          "scenario_name": "negative_integers",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.SimpleCalculator.addition#2",
+          "scenario_name": "zero_values",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.SimpleCalculator.addition#3",
+          "scenario_name": "floating_point_numbers",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.SimpleCalculator.addition#4",
+          "scenario_name": "large_integers",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        }
+      ],
+      "coverage_pct": null,
+      "writer_cost_usd": 0.07202159999999999,
+      "writer_input_tokens": 160872,
+      "writer_output_tokens": 8384,
+      "writer_cache_read_input_tokens": 74592,
+      "writer_cache_creation_input_tokens": 0,
+      "diagnostics": []
+    },
+    {
+      "target_symbol_id": "calc.SimpleCalculator.multiplication",
+      "symbol_kind": "staticmethod",
+      "source_file": "calc.py",
+      "source_range": [
+        18,
+        20
+      ],
+      "test_file": "/var/tmp/Roost/RoostGPT/python-test-agent/1368c4b9-9b36-4473-8db4-627c4467baf1/source/calculator-python/module/test_SimpleCalculator_multiplication.py",
+      "test_file_hash": "sha256:937624c14813bef9fc3614c6bba19a494cd4efd7e9f808ac9e86d0237669a21c",
+      "test_status": "passed",
+      "iterations": 8,
+      "pivots": 0,
+      "scenarios": [
+        {
+          "scenario_id": "calc.SimpleCalculator.multiplication#0",
+          "scenario_name": "positive_integers",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.SimpleCalculator.multiplication#1",
+          "scenario_name": "multiply_by_zero",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.SimpleCalculator.multiplication#2",
+          "scenario_name": "two_negatives",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.SimpleCalculator.multiplication#3",
+          "scenario_name": "mixed_signs_integers",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.SimpleCalculator.multiplication#4",
+          "scenario_name": "float_multiplication",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.SimpleCalculator.multiplication#5",
+          "scenario_name": "large_numbers",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        }
+      ],
+      "coverage_pct": null,
+      "writer_cost_usd": 0.0403361,
+      "writer_input_tokens": 91150,
+      "writer_output_tokens": 3693,
+      "writer_cache_read_input_tokens": 36262,
+      "writer_cache_creation_input_tokens": 0,
+      "diagnostics": []
+    }
+  ],
+  "files_written": [
+    {
+      "path": "module/test_SimpleCalculator_addition.py",
+      "hash": "sha256:5fbdeea9129c1007eb8bfa6249ce48c6984f0fe7550ddbca9ea6c4ca4cfb5287",
+      "status": "created"
+    },
+    {
+      "path": "module/test_SimpleCalculator_multiplication.py",
+      "hash": "sha256:937624c14813bef9fc3614c6bba19a494cd4efd7e9f808ac9e86d0237669a21c",
+      "status": "created"
+    }
+  ],
+  "pr_ready": {
+    "branch_suggestion": "roost/python-tests-20260506-0612",
+    "commit_message": "roost-pytest: add 2 test file(s)",
+    "pr_title": "Auto-generated Python unit tests (2 file(s))",
+    "pr_body_markdown": "## Summary\n- 2 targets with fully green tests\n\n## Generated test files\n- `module/test_SimpleCalculator_addition.py`\n- `module/test_SimpleCalculator_multiplication.py`",
+    "changed_files": [
+      "module/test_SimpleCalculator_addition.py",
+      "module/test_SimpleCalculator_multiplication.py"
+    ]
+  },
+  "diagnostics": []
+}
