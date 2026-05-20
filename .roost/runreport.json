@@ -1,0 +1,116 @@
+{
+  "run_id": "22e4f098",
+  "started_at": "2026-04-25T11:57:40.735792Z",
+  "ended_at": "2026-04-25T11:58:46.883484Z",
+  "status": "ok",
+  "config": {
+    "repo": "/private/var/tmp/Roost/RoostGPT/python-test-agent/1777118250/source/calculator-python",
+    "out": "/private/var/tmp/Roost/RoostGPT/python-test-agent/1777118250/source/calculator-python",
+    "workers": 1,
+    "scenarios_from": "planner",
+    "provider": "env:AI_TYPE",
+    "model": "gemini/gemini-3-flash-preview",
+    "jedi": true
+  },
+  "summary": {
+    "targets_total": 1,
+    "targets_passed": 1,
+    "targets_failed": 0,
+    "targets_partial": 0,
+    "targets_skipped": 0,
+    "scenarios_total": 6,
+    "scenarios_passed": 6,
+    "scenarios_failed": 0,
+    "coverage_weighted": null,
+    "llm_cost_usd": 0.0575,
+    "elapsed_ms": 0
+  },
+  "targets": [
+    {
+      "target_symbol_id": "calc.division",
+      "symbol_kind": "function",
+      "source_file": "calc.py",
+      "source_range": [
+        29,
+        33
+      ],
+      "test_file": "/private/var/tmp/Roost/RoostGPT/python-test-agent/1777118250/source/calculator-python/module/test_division.py",
+      "test_file_hash": "sha256:4303a3b296209e06b8d53a97560b2a40a1e953d8b5437673c71fc785dd18ffe1",
+      "test_status": "passed",
+      "iterations": 9,
+      "pivots": 0,
+      "scenarios": [
+        {
+          "scenario_id": "calc.division#0",
+          "scenario_name": "zero_dividend",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.division#1",
+          "scenario_name": "float_zero_divisor",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.division#2",
+          "scenario_name": "negative_zero_divisor",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.division#3",
+          "scenario_name": "repeating_decimal",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.division#4",
+          "scenario_name": "infinity_by_infinity",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        },
+        {
+          "scenario_id": "calc.division#5",
+          "scenario_name": "type_error_string",
+          "passed": true,
+          "duration_ms": null,
+          "failure_reason": null,
+          "stderr_excerpt": null
+        }
+      ],
+      "coverage_pct": null,
+      "writer_cost_usd": 0.05749655,
+      "writer_input_tokens": 128002,
+      "writer_output_tokens": 8383,
+      "diagnostics": []
+    }
+  ],
+  "files_written": [
+    {
+      "path": "module/test_division.py",
+      "hash": "sha256:4303a3b296209e06b8d53a97560b2a40a1e953d8b5437673c71fc785dd18ffe1",
+      "status": "created"
+    }
+  ],
+  "pr_ready": {
+    "branch_suggestion": "roost/python-tests-20260425-1158",
+    "commit_message": "roost-pytest: add 1 test file(s)",
+    "pr_title": "Auto-generated Python unit tests (1 file(s))",
+    "pr_body_markdown": "## Summary\n- 1 targets with fully green tests\n\n## Generated test files\n- `module/test_division.py`",
+    "changed_files": [
+      "module/test_division.py"
+    ]
+  },
+  "diagnostics": []
+}
