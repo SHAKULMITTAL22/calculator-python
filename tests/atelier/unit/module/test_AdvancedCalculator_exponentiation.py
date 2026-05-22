@@ -1,5 +1,5 @@
 # atelier:audit
-# The test suite covers standard power operations, zero-power edge cases, and fractional exponents. It also verifies error handling for zero division and invalid type inputs.
+# Tests cover standard math operations, Python-specific power behaviors, and common error paths. Coverage is comprehensive for numeric inputs and basic type validation.
 # /atelier:audit
 """Tests for `calc_advance.AdvancedCalculator.exponentiation`.
 

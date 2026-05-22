@@ -1,5 +1,5 @@
 # atelier:audit
-# The tests verify floor division behavior across integers, floats, and negative numbers. Coverage includes custom error string handling for zero division and type enforcement.
+# Tests validate standard floor division, string-based error handling for zero divisors, and type constraints. The suite effectively maps Python's floor division behavior.
 # /atelier:audit
 """Tests for `calc_advance.AdvancedCalculator.integer_division`.
 
