@@ -5,12 +5,12 @@ changes; see the run report for generation details.
 """
 # Source: calc.py:18-20
 # Scenarios:
-#   - [happy_path] Call multiplication(10, 5) and assert the return value is 50, exercising the r…: Call multiplication(10, 5) and assert the return value is 50, exercising the return at calc.py:20.
-#   - [happy_path] Call multiplication(-5, 6) and assert the return value is -30 at calc: Call multiplication(-5, 6) and assert the return value is -30 at calc.py:20.
-#   - [happy_path] Call multiplication(0, 100) and assert the return value is 0 at calc: Call multiplication(0, 100) and assert the return value is 0 at calc.py:20.
-#   - [happy_path] Call multiplication(2: Call multiplication(2.5, 4.0) and assert the return value is 10.0 at calc.py:20.
-#   - [happy_path] Call multiplication('a', 3) and assert it returns 'aaa' due to Python string r…: Call multiplication('a', 3) and assert it returns 'aaa' due to Python string repetition behavior at calc.py:20, which may be unintended for a numeric calculator.
-#   - [error_path] Call multiplication('a', 'b') and assert pytest: Call multiplication('a', 'b') and assert pytest.raises(TypeError) is triggered at calc.py:20 because Python cannot multiply two strings.
+#   - [happy_path] Call multiplication(10, 5) and assert the return value is 50, exercising the return at calc.py:20.
+#   - [happy_path] Call multiplication(-5, 6) and assert the return value is -30 at calc.py:20.
+#   - [happy_path] Call multiplication(0, 100) and assert the return value is 0 at calc.py:20.
+#   - [happy_path] Call multiplication(2.5, 4.0) and assert the return value is 10.0 at calc.py:20.
+#   - [happy_path] Call multiplication('a', 3) and assert it returns 'aaa' due to Python string repetition behavior at calc.py:20.
+#   - [error_path] Call multiplication('a', 'b') and assert pytest.raises(TypeError) is triggered at calc.py:20.
 
 import pytest
 from calc import SimpleCalculator
@@ -57,3 +57,22 @@ def test_multiplication_two_strings_raises_typeerror():
     # Call multiplication('a', 'b') and assert pytest.raises(TypeError) is triggered at calc.py:20.
     with pytest.raises(TypeError):
         SimpleCalculator.multiplication('a', 'b')
+
+@pytest.mark.generated
+@pytest.mark.error_path
+def test_multiplication_none_and_int_raises_typeerror():
+    """Multiply None with an integer multiplier (None * 5) raising TypeError."""
+    with pytest.raises(TypeError):
+        SimpleCalculator.multiplication(None, 5)
+
+@pytest.mark.generated
+@pytest.mark.edge_case
+def test_multiplication_negative_floats_returns_10_0():
+    """Multiply two negative floating point numbers (-2.5 * -4.0 = 10.0)."""
+    assert SimpleCalculator.multiplication(-2.5, -4.0) == 10.0
+
+@pytest.mark.generated
+@pytest.mark.edge_case
+def test_multiplication_list_repetition_returns_repeated_list():
+    """Multiply a list by an integer ([1, 2] * 2 = [1, 2, 1, 2])."""
+    assert SimpleCalculator.multiplication([1, 2], 2) == [1, 2, 1, 2]

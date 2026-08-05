@@ -51,3 +51,13 @@ def test_asserts_that_passing_a_string_as_an_operand_results_in_a_typeerror():
     """Asserts that passing a string as an operand results in a TypeError."""
     with pytest.raises(TypeError):
         SimpleCalculator.modulus('10', 3)
+
+@pytest.mark.boundary
+def test_handles_zero_divisor_as_floating_point_zero():
+    """Handles zero divisor as floating point 0.0 by returning sentinel string."""
+    assert SimpleCalculator.modulus(10, 0.0) == 'Cannot perform modulus by zero'
+
+@pytest.mark.edge
+def test_exercises_python_floor_division_modulo_behavior_for_negative_divisor():
+    """Exercises Python floor division modulo behavior for negative divisor."""
+    assert SimpleCalculator.modulus(10, -3) == -2
