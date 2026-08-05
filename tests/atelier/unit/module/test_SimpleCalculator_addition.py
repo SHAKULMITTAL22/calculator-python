@@ -9,6 +9,7 @@ changes; see the run report for generation details.
 #   - [happy_path] Passing num1=0 and num2=0 must return 0; currently fails at calc: Passing num1=0 and num2=0 must return 0; currently fails at calc.py:10 by returning 2.
 #   - [happy_path] Passing num1=-10 and num2=-5 must return -15; currently fails at calc: Passing num1=-10 and num2=-5 must return -15; currently fails at calc.py:10 by returning -13.
 #   - [error_path] Passing num1=1 and num2='2' must raise TypeError with message 'unsupported ope…: Passing num1=1 and num2='2' must raise TypeError with message 'unsupported operand type(s) for +' at calc.py:10, ensuring no state is modified.
+#   - [boundary] Add floating point numbers (10.5 and 4.5) returning 15.0
 
 import pytest
 from calc import SimpleCalculator
@@ -69,3 +70,13 @@ def test_addition_error_path_type_error():
     # and 1 + '2' will raise TypeError regardless of the + 2.
     with pytest.raises(TypeError, match=r"unsupported operand type\(s\) for \+"):
         SimpleCalculator.addition(1, '2')
+
+@pytest.mark.generated
+@pytest.mark.boundary
+@pytest.mark.xfail(
+    reason="docstring says 'Return the sum of two numbers.' but "
+           "implementation returns num1 + num2 + 2"
+)
+def test_addition_boundary_float():
+    """Add floating point numbers (10.5 and 4.5) returning 15.0."""
+    assert SimpleCalculator.addition(10.5, 4.5) == 15.0
