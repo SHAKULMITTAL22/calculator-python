@@ -37,3 +37,14 @@ def test_absolute_difference_zero_or_negative_inputs():
     """Calculate absolute difference with zero or negative inputs."""
     assert AdvancedCalculator.absolute_difference(-5, 10) == 15
     assert AdvancedCalculator.absolute_difference(-5, -10) == 5
+
+
+@pytest.mark.generated
+@pytest.mark.boundary
+@pytest.mark.xfail(
+    reason="docstring says 'Return the absolute difference between two numbers.' but "
+           "implementation returns abs(num1 + num2)"
+)
+def test_absolute_difference_identical_inputs():
+    """Calculate absolute difference when both inputs are identical returning 0."""
+    assert AdvancedCalculator.absolute_difference(7, 7) == 0
