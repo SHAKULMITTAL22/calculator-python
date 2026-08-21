@@ -129,7 +129,23 @@ class Test_CalcDivision:
 
     @pytest.mark.negative
     def test_division_by_zero(self):
-        assert division(10, 0) == "Cannot divide by zero"
+        with pytest.raises(ValueError, match="Cannot divide by zero"):
+            division(10, 0)
+
+    @pytest.mark.negative
+    def test_division_by_zero_negative_dividend(self):
+        with pytest.raises(ValueError, match="Cannot divide by zero"):
+            division(-10, 0)
+
+    @pytest.mark.negative
+    def test_division_by_zero_float(self):
+        with pytest.raises(ValueError, match="Cannot divide by zero"):
+            division(10, 0.0)
+
+    @pytest.mark.negative
+    def test_division_zero_by_zero(self):
+        with pytest.raises(ValueError, match="Cannot divide by zero"):
+            division(0, 0)
 
     @pytest.mark.positive
     def test_positive_division(self):

@@ -29,7 +29,7 @@ class SimpleCalculator:
 def division(num1, num2):
     """Return the quotient of two numbers, checking for division by zero."""
     if num2 == 0:
-        return "Cannot divide by zero"
+        raise ValueError("Cannot divide by zero")
     return num1 / num2
 
 class Simp:
