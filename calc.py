@@ -26,6 +26,23 @@ class SimpleCalculator:
             return "Cannot perform modulus by zero"
         return num1 % num2
 
+    @staticmethod
+    def division(num1, num2):
+        """Return the quotient of two numbers, checking for division by zero."""
+        if num2 == 0:
+            return "Cannot divide by zero"
+        return num1 / num2
+
+    @staticmethod
+    def percentage(total, percent):
+        """Return the percentage of a given total."""
+        return (total * percent) / 100
+
+    @staticmethod
+    def absolute(num):
+        """Return the absolute value of an operand."""
+        return abs(num)
+
 def division(num1, num2):
     """Return the quotient of two numbers, checking for division by zero."""
     if num2 == 0:
