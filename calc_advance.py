@@ -12,6 +12,11 @@ class AdvancedCalculator:
         return base ** exponent
 
     @staticmethod
+    def square(number):
+        """Return the square of a number."""
+        return number ** 2
+
+    @staticmethod
     def integer_division(num1, num2):
         """Return the integer division of two numbers."""
         if num2 == 0:
