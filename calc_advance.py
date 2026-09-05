@@ -17,6 +17,11 @@ class AdvancedCalculator:
         return number ** 2
 
     @staticmethod
+    def cube(number):
+        """Return the cube of a number."""
+        return number ** 3
+
+    @staticmethod
     def integer_division(num1, num2):
         """Return the integer division of two numbers."""
         if num2 == 0:
