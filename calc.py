@@ -32,6 +32,10 @@ def division(num1, num2):
         return "Cannot divide by zero"
     return num1 / num2
 
+def percentage(value, percent):
+    """Return the requested percentage of a value."""
+    return value * percent / 100
+
 class Simp:
     """
     A simple class without any functionality, included as per request.
