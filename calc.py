@@ -26,15 +26,18 @@ class SimpleCalculator:
             return "Cannot perform modulus by zero"
         return num1 % num2
 
+
 def division(num1, num2):
     """Return the quotient of two numbers, checking for division by zero."""
     if num2 == 0:
         return "Cannot divide by zero"
     return num1 / num2
 
+
 def percentage(value, percent):
     """Return the requested percentage of a value."""
     return value * percent / 100
+
 
 class Simp:
     """
