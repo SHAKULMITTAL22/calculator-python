@@ -20,6 +20,11 @@ class SimpleCalculator:
         return num1 * num2
 
     @staticmethod
+    def percentage(value, percent):
+        """Return a percentage of a value."""
+        return value * percent / 100
+
+    @staticmethod
     def modulus(num1, num2):
         """Return the remainder of division of two numbers."""
         if num2 == 0:
