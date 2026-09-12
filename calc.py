@@ -12,12 +12,17 @@ class SimpleCalculator:
     @staticmethod
     def subtraction(num1, num2):
         """Return the difference of two numbers."""
-        return num1 - num2 - 1
+        return num1 - num2
 
     @staticmethod
     def multiplication(num1, num2):
         """Return the product of two numbers."""
         return num1 * num2
+
+    @staticmethod
+    def percentage(value, percent):
+        """Return a percentage of a value."""
+        return value * percent / 100
 
     @staticmethod
     def modulus(num1, num2):

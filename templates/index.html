@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blue Motion Calculator</title>
+  <link rel="stylesheet" href="/static/calculator.css">
+</head>
+<body>
+  <main class="calculator">
+    <p class="eyebrow">Eleven ways to solve it</p>
+    <h1>Blue Motion</h1>
+    <p class="intro">Choose an operation, enter the numbers, and calculate.</p>
+    <div class="operation-grid" role="radiogroup" aria-label="Calculator operation">
+      <!-- OPERATIONS -->
+    </div>
+    <form id="calculator-form">
+      <div id="operands" class="operands"></div>
+      <button class="calculate" type="submit">Calculate <span aria-hidden="true">→</span></button>
+    </form>
+    <output id="result" aria-live="polite">Ready when you are.</output>
+  </main>
+  <script src="/static/calculator.js"></script>
+</body>
+</html>
