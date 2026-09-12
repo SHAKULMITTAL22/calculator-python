@@ -1,0 +1,21 @@
+:root { color-scheme: dark; font-family: Inter, ui-sans-serif, system-ui, sans-serif; background: #06142d; color: #ecf5ff; }
+* { box-sizing: border-box; }
+body { min-height: 100vh; margin: 0; display: grid; place-items: center; padding: 2rem; background: radial-gradient(circle at 20% 10%, #123c79, transparent 38%), #06142d; }
+.calculator { width: min(100%, 58rem); padding: clamp(1.3rem, 4vw, 3rem); border: 1px solid #377bd1; border-radius: 2rem; background: rgb(7 27 58 / 88%); box-shadow: 0 2rem 6rem #0008; }
+.eyebrow { color: #79b8ff; text-transform: uppercase; letter-spacing: .16em; font-weight: 750; }
+h1 { margin: .15em 0; font-size: clamp(2.5rem, 8vw, 5.5rem); line-height: .95; }
+.intro { color: #b8cbe5; }
+.operation-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); gap: .7rem; margin: 2rem 0; }
+button, input { font: inherit; }
+.operation { display: flex; gap: .6rem; align-items: center; min-height: 3.5rem; padding: .75rem; color: #dbeeff; background: #0b2449; border: 1px solid #28578f; border-radius: .8rem; cursor: pointer; transition: transform .18s ease, background .18s ease, border-color .18s ease; }
+.operation:hover { transform: translateY(-2px); border-color: #68adff; }
+.operation.selected { background: #0865db; border-color: #9ad0ff; box-shadow: 0 0 0 3px #1681ff3b; }
+.operation span { font-size: 1.35rem; }
+:focus-visible { outline: 3px solid #9ed3ff; outline-offset: 3px; }
+.operands { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 1rem; }
+label { color: #b8cbe5; text-transform: capitalize; }
+input { display: block; width: 100%; margin-top: .45rem; padding: 1rem; border: 1px solid #3e6faa; border-radius: .7rem; background: #06162f; color: white; }
+.calculate { width: 100%; margin: 1rem 0; padding: 1rem; border: 0; border-radius: .7rem; background: #61adff; color: #031329; font-weight: 800; cursor: pointer; }
+output { display: block; min-height: 4rem; padding: 1.2rem; border-radius: .7rem; background: #041126; color: #8fc7ff; font-size: 1.25rem; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } }
+@media (max-width: 35rem) { body { padding: .7rem; } .calculator { border-radius: 1.2rem; } .operation-grid { grid-template-columns: 1fr 1fr; } }
