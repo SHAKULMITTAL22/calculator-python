@@ -91,6 +91,9 @@ def test_http_surfaces(method, path, payload, status, fragment):
     if path == "/":
         assert client.get("/static/calculator.css").content_type.startswith("text/css")
         assert client.get("/static/calculator.js").content_type.startswith("text/javascript")
+        assert response.data.count(b'role="radio"') == 11
+        assert response.data.count(b'tabindex="0"') == 1
+        assert response.data.count(b'tabindex="-1"') == 10
         assert client.get("/static/missing.txt").status_code == 404
         assert client.get("/api/calculate").status_code == 405
         assert client.get("/missing").status_code == 404
