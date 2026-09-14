@@ -1,6 +1,7 @@
 """Agreement v1 coverage for every operation and application boundary."""
 
 from io import BytesIO
+import re
 from unittest.mock import patch
 
 import pytest
@@ -22,6 +23,16 @@ VALID_CASES = {
     "integer_division": [({"num1": 9, "num2": 2}, 4), ({"num1": -9, "num2": 2}, -5), ({"num1": 0, "num2": 2}, 0), ({"num1": 9.5, "num2": 2}, 4)],
     "absolute_difference": [({"num1": 8, "num2": 3}, 5), ({"num1": 3, "num2": 8}, 5), ({"num1": -3, "num2": -8}, 5), ({"num1": 2.5, "num2": 1}, 1.5)],
 }
+
+
+def test_operation_radios_have_one_roving_tab_stop():
+    page = app.test_client().get("/").data.decode()
+    radios = re.findall(r'<button class="operation[^>]+role="radio"[^>]+>', page)
+
+    assert len(radios) == 11
+    assert sum('aria-checked="true"' in radio for radio in radios) == 1
+    assert sum('tabindex="0"' in radio for radio in radios) == 1
+    assert all('tabindex="-1"' in radio for radio in radios[1:])
 
 
 @pytest.mark.parametrize(

@@ -4,7 +4,7 @@ const operands = document.querySelector('#operands');
 const output = document.querySelector('#result');
 let selected = JSON.parse(buttons[0].dataset.operation);
 
-function drawInputs() {
+function drawInputs(focusFirst = true) {
   operands.replaceChildren(...selected.operands.map((name, index) => {
     const label = document.createElement('label');
     label.textContent = name.replace('_', ' ');
@@ -12,15 +12,19 @@ function drawInputs() {
     input.type = 'number'; input.step = 'any'; input.name = name; input.required = true;
     input.autocomplete = 'off';
     label.append(input);
-    if (index === 0) requestAnimationFrame(() => input.focus());
+    if (index === 0 && focusFirst) requestAnimationFrame(() => input.focus());
     return label;
   }));
 }
 
-function choose(button) {
-  buttons.forEach(item => { item.classList.remove('selected'); item.setAttribute('aria-checked', 'false'); });
-  button.classList.add('selected'); button.setAttribute('aria-checked', 'true');
-  selected = JSON.parse(button.dataset.operation); drawInputs(); output.textContent = 'Ready when you are.';
+function choose(button, focusOperand = true) {
+  buttons.forEach(item => {
+    const isSelected = item === button;
+    item.classList.toggle('selected', isSelected);
+    item.setAttribute('aria-checked', String(isSelected));
+    item.tabIndex = isSelected ? 0 : -1;
+  });
+  selected = JSON.parse(button.dataset.operation); drawInputs(focusOperand); output.textContent = 'Ready when you are.';
 }
 
 buttons.forEach((button, index) => {
@@ -30,7 +34,7 @@ buttons.forEach((button, index) => {
     event.preventDefault();
     const direction = ['ArrowRight', 'ArrowDown'].includes(event.key) ? 1 : -1;
     const next = buttons[(index + direction + buttons.length) % buttons.length];
-    next.focus(); choose(next);
+    choose(next, false); next.focus();
   });
 });
 

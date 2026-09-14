@@ -32,10 +32,11 @@ def render_index() -> Response:
     for index, operation in enumerate(operation_inventory()):
         selected = " selected" if index == 0 else ""
         checked = "true" if index == 0 else "false"
+        tabindex = "0" if index == 0 else "-1"
         metadata = escape(json.dumps(operation, separators=(",", ":")), quote=True)
         buttons.append(
             f'<button class="operation{selected}" role="radio" aria-checked="{checked}" '
-            f'data-operation="{metadata}"><span aria-hidden="true">'
+            f'tabindex="{tabindex}" data-operation="{metadata}"><span aria-hidden="true">'
             f'{escape(str(operation["symbol"]))}</span>{escape(str(operation["label"]))}</button>'
         )
     template = (ROOT / "templates" / "index.html").read_text(encoding="utf-8")

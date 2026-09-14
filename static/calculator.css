@@ -18,4 +18,4 @@ input { display: block; width: 100%; margin-top: .45rem; padding: 1rem; border: 
 .calculate { width: 100%; margin: 1rem 0; padding: 1rem; border: 0; border-radius: .7rem; background: #61adff; color: #031329; font-weight: 800; cursor: pointer; }
 output { display: block; min-height: 4rem; padding: 1.2rem; border-radius: .7rem; background: #041126; color: #8fc7ff; font-size: 1.25rem; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } }
-@media (max-width: 35rem) { body { padding: .7rem; } .calculator { border-radius: 1.2rem; } .operation-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 35rem) { body { padding: .7rem; } .calculator { border-radius: 1.2rem; } .operation-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
