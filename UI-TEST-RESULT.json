@@ -1,20 +1,20 @@
 {
   "schemaVersion": 1,
   "mode": "repair",
-  "status": "failed",
-  "summary": "Protected execution reproduced both defects on the admitted baseline preview; candidate execution remains pending publication of the modified source.",
+  "status": "passed",
+  "summary": "The protected candidate suite passed keyboard, 320px responsive, desktop layout, and reduced-motion coverage.",
   "repository": {
     "name": "SHAKULMITTAL22/calculator-python",
-    "commit": "3342f8ec54ac58e2808a36c0ce34a8806a59123c"
+    "commit": "f27211a4ed2043e50cf58defe60c8eaf15edbbfe"
   },
   "observations": [
     {
-      "page": "http://6a4f6400-0e68-43c7-b2be-6f7dc17536e4.preview.localhost:3088/",
+      "page": "http://60f791cc-def2-4ebc-83dd-988f13b9c589.preview.localhost:3088/",
       "locator": "getByRole('radiogroup', { name: 'Calculator operation' })",
       "outcome": "Observed eleven radio controls and stable accessible operation names before generating selectors."
     },
     {
-      "page": "http://6a4f6400-0e68-43c7-b2be-6f7dc17536e4.preview.localhost:3088/",
+      "page": "http://60f791cc-def2-4ebc-83dd-988f13b9c589.preview.localhost:3088/",
       "locator": "getByRole('status')",
       "outcome": "Observed the polite result status used for calculation-result assertions."
     }
@@ -26,39 +26,37 @@
   "environmentVariables": [],
   "execution": {
     "command": "playwright test --config=playwright.config.js tests/ui/calculator.acceptance.spec.js",
-    "exitCode": 1,
-    "passed": 0,
-    "failed": 2,
+    "exitCode": 0,
+    "passed": 4,
+    "failed": 0,
     "skipped": 0
   },
   "artifacts": [
     {
       "stage": "execution",
       "kind": "report",
-      "reference": "bc433dce-a5c1-4313-95b6-537ae7f9e84b"
+      "reference": "d82fb469-5e62-4939-9600-a6229af6334f"
     },
     {
       "stage": "execution",
       "kind": "trace",
-      "reference": "1c8a255d-3a03-40ef-be2f-a5aeb7a97983"
+      "reference": "6bce9e36-0e63-4b0e-8dd5-6b5025fbf14f"
     },
     {
       "stage": "execution",
       "kind": "trace",
-      "reference": "83e0bc94-a786-4006-88ff-f388049fa1e8"
+      "reference": "d0b0c939-ca2d-455f-b4ef-7307db9459f0"
     },
     {
       "stage": "execution",
-      "kind": "video",
-      "reference": "0f3eabae-807f-4672-9bde-f176758f35f1"
+      "kind": "trace",
+      "reference": "3f49b51b-0eae-4cb8-ae00-40c5fa518d4d"
     },
     {
       "stage": "execution",
-      "kind": "video",
-      "reference": "c727b3f2-85f-4f0d-a8eb-6d0acce4e2f8"
+      "kind": "trace",
+      "reference": "f55f1b00-0393-42a3-8fe8-2dbc1343a87d"
     }
   ],
-  "limitations": [
-    "The only currently approved URL serves baseline commit 3342f8ec54ac58e2808a36c0ce34a8806a59123c; protected acceptance against the repaired candidate must run after authorized candidate publication."
-  ]
+  "limitations": []
 }

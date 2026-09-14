@@ -38,8 +38,55 @@ test('all controls fit and remain operable at exactly 320px', {
   }
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(320);
 
+  const operationNames = [
+    'Addition', 'Subtraction', 'Multiplication', 'Percentage', 'Modulus',
+    'Division', 'Exponentiation', 'Square', 'Cube', 'Integer division',
+    'Absolute difference',
+  ];
+  for (const name of operationNames) {
+    const operation = page.getByRole('radio', { name, exact: true });
+    await operation.click();
+    await expect(operation).toBeChecked();
+  }
+
+  await page.getByRole('radio', { name: 'Addition', exact: true }).click();
   await page.getByRole('spinbutton', { name: 'num1' }).fill('2');
   await page.getByRole('spinbutton', { name: 'num2' }).fill('3');
   await page.getByRole('button', { name: 'Calculate' }).click();
   await expect(page.getByRole('status')).toHaveText('Addition: 5');
+});
+
+test('desktop layout remains contained and keeps operands side by side', {
+  annotation: { type: 'requirement', description: 'responsive-layout' },
+}, async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.goto('/');
+
+  const calculator = page.locator('.calculator');
+  const firstOperand = page.getByRole('spinbutton', { name: 'num1' });
+  const secondOperand = page.getByRole('spinbutton', { name: 'num2' });
+  const [calculatorBox, firstBox, secondBox] = await Promise.all([
+    calculator.boundingBox(), firstOperand.boundingBox(), secondOperand.boundingBox(),
+  ]);
+
+  expect(calculatorBox).not.toBeNull();
+  expect(firstBox).not.toBeNull();
+  expect(secondBox).not.toBeNull();
+  expect(calculatorBox.x).toBeGreaterThanOrEqual(0);
+  expect(calculatorBox.x + calculatorBox.width).toBeLessThanOrEqual(1440);
+  expect(firstBox.y).toBe(secondBox.y);
+  expect(firstBox.x + firstBox.width).toBeLessThan(secondBox.x);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(1440);
+});
+
+test('reduced motion disables control transitions', {
+  annotation: { type: 'requirement', description: 'reduced-motion' },
+}, async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('/');
+
+  const operation = page.getByRole('radio', { name: 'Addition', exact: true });
+  await expect(operation).toHaveCSS('transition-duration', '0s');
+  await operation.hover();
+  await expect(operation).toHaveCSS('transition-duration', '0s');
 });
