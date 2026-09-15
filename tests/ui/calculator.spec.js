@@ -56,3 +56,15 @@ test('all controls remain contained without document overflow at 320px', {
     expect(box.x + box.width).toBeLessThanOrEqual(viewport.width);
   }
 });
+
+test('reduced motion disables operation transitions', {
+  annotation: { type: 'requirement', description: 'reduced-motion' },
+}, async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('/');
+
+  const operation = page.getByRole('radio', { name: 'Addition', exact: true });
+  await expect(operation).toHaveCSS('transition-duration', '0s');
+  await operation.hover();
+  await expect(operation).toHaveCSS('transition-duration', '0s');
+});
