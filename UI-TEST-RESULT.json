@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "mode": "repair",
+  "status": "passed",
+  "summary": "The protected candidate suite passed keyboard, 320px responsive, desktop layout, and reduced-motion coverage.",
+  "repository": {
+    "name": "SHAKULMITTAL22/calculator-python",
+    "commit": "f27211a4ed2043e50cf58defe60c8eaf15edbbfe"
+  },
+  "observations": [
+    {
+      "page": "http://60f791cc-def2-4ebc-83dd-988f13b9c589.preview.localhost:3088/",
+      "locator": "getByRole('radiogroup', { name: 'Calculator operation' })",
+      "outcome": "Observed eleven radio controls and stable accessible operation names before generating selectors."
+    },
+    {
+      "page": "http://60f791cc-def2-4ebc-83dd-988f13b9c589.preview.localhost:3088/",
+      "locator": "getByRole('status')",
+      "outcome": "Observed the polite result status used for calculation-result assertions."
+    }
+  ],
+  "files": [
+    "playwright.config.js",
+    "tests/ui/calculator.acceptance.spec.js"
+  ],
+  "environmentVariables": [],
+  "execution": {
+    "command": "playwright test --config=playwright.config.js tests/ui/calculator.acceptance.spec.js",
+    "exitCode": 0,
+    "passed": 4,
+    "failed": 0,
+    "skipped": 0
+  },
+  "artifacts": [
+    {
+      "stage": "execution",
+      "kind": "report",
+      "reference": "d82fb469-5e62-4939-9600-a6229af6334f"
+    },
+    {
+      "stage": "execution",
+      "kind": "trace",
+      "reference": "6bce9e36-0e63-4b0e-8dd5-6b5025fbf14f"
+    },
+    {
+      "stage": "execution",
+      "kind": "trace",
+      "reference": "d0b0c939-ca2d-455f-b4ef-7307db9459f0"
+    },
+    {
+      "stage": "execution",
+      "kind": "trace",
+      "reference": "3f49b51b-0eae-4cb8-ae00-40c5fa518d4d"
+    },
+    {
+      "stage": "execution",
+      "kind": "trace",
+      "reference": "f55f1b00-0393-42a3-8fe8-2dbc1343a87d"
+    }
+  ],
+  "limitations": []
+}
